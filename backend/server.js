@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3500;
 const cors = require('cors');
 
 // CORS Middleware for all origins
-app.use(cors({ origin: '*' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 // Logger Middleware
 app.use(logger);

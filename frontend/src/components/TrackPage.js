@@ -1,22 +1,24 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const TrackPage = () => {
     const [id, setid] = useState();
     const [donation, setDonation] = useState([]);
 
     const handleDonation = async (e) => {
-        e.preventDefault();
-        const token = JSON.parse(localStorage.getItem('accessToken'));
-        console.log(token);
-        const result = await axios.get(`http://localhost:3500/donations/${id}`, {
-            headers: {
-                'Authorization': `Bearer ${token}`
+        try {
+            e.preventDefault();
+            const response = await axios.get(`/donations/${id}`);
+            if (response.data.error) {
+                toast.error(response.data.error);
             }
-        });
-        setDonation(result.data);
-        console.log(result);        
+            console.log(response.data);
+            setDonation(response.data);
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     return (
@@ -54,9 +56,10 @@ const TrackPage = () => {
                                 <div className="flex justify-between items-center">
                                     <div>
                                         <p className="font-bold">Donation #{donation.donation_id}</p>
+                                        <p className=""> {donation.Item.desc}</p>
                                         <p className="text-gray-600">Type: {donation.Item.type}</p>
                                     </div>
-                                    <span className="text-green-600">Delivered</span>
+                                    <span className="text-green-600">{donation.date_received}</span>
                                 </div>
                             </div>
                         )}

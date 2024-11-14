@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const donorController = require('../controllers/donorController')
-const verifyJWT = require('../middleware/verifyJWT');
 
-router.use(verifyJWT);
 
 // Create a new donor
 router.post('/', donorController.createNewDonor);

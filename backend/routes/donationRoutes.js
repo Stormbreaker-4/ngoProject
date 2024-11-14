@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const donationController = require('../controllers/donationController');
-const verifyJWT = require('../middleware/verifyJWT');
-
-router.use(verifyJWT);
 
 // make a  donations 
 router.post('/', donationController.createNewDonation);

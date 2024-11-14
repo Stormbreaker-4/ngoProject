@@ -43,7 +43,7 @@ const getOneDonation = async (req, res) => {
             include: [Donor, Item, Branch]
         });
         if (!donation)
-            return res.status(400).json({ message: 'No donations' });
+            return res.json({ error: `A donation with id: ${id} doesn't exist` });
         res.json(donation);
     } catch (err) {
         console.error(err);

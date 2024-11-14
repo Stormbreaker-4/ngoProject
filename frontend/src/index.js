@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // Render the app
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true }}>
             <App />
         </BrowserRouter>
     </React.StrictMode>
