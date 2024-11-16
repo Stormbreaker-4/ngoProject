@@ -9,7 +9,7 @@ const Footer = () => (
                     <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                     <div className="flex items-center gap-2">
                         <Mail size={20} />
-                        <a href="mailto:contact@charityhub.org" className="hover:text-blue-300">site@name.org</a>
+                        <a href="mailto:aidbridge@charity.org" className="hover:text-blue-300">aidbridge@charity.org</a>
                     </div>
                 </div>
                 <div>

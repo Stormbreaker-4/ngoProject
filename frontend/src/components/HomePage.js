@@ -26,7 +26,7 @@ const HomePage = () => {
 
             {/* About Us Section */}
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-6 text-center">About Us</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center pb-10">About Us</h2> {/* Added padding */}
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <p className="text-gray-600 leading-relaxed">
@@ -35,7 +35,7 @@ const HomePage = () => {
                             make the maximum impact where they're needed most.
                         </p>
                     </div>
-                    <div className="bg-gray-200 h-64 rounded-lg">                        
+                    <div className="bg-gray-200 h-64 rounded-lg">
                         <div className="w-full h-full flex items-center justify-center text-gray-500">
                             <img src="../assets/water.jpg" alt="Water" className="w-full h-auto object-cover" />
                         </div>

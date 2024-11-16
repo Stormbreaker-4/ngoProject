@@ -44,7 +44,7 @@ const App = () => {
                 <nav className="bg-blue-600 text-white p-4">
                     <div className="container mx-auto flex justify-between items-center">
                         <Link to="/" className="hover:text-blue-200">
-                            <div className="text-2xl font-bold">(Project Name)</div>
+                            <div className="text-2xl font-bold">AidBridge</div>
                         </Link>
 
                         {/* Desktop Navigation */}

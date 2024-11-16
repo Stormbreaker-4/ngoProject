@@ -20,8 +20,6 @@ const login = async (req, res) => {
             return res.json({ error: 'You entered the wrong password!' })
         }
 
-        // return res.json({ message: 'Passwords match' });
-
         jwt.sign(
             {
                 donor_id: foundDonor.donor_id,
