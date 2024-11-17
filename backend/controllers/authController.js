@@ -41,7 +41,7 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
     try {
-        const { name, pwd, phone = null } = req.body;
+        const { name, pwd, address = null, phone = null } = req.body;
         if (!name) {
             return res.json({ error: 'Name is required' });
         }
@@ -53,6 +53,7 @@ const register = async (req, res) => {
         const donor = await Donor.create({
             name,
             pwd: hashedPwd,
+            address,
             phone_num: phone
         });
 

@@ -11,7 +11,6 @@ import NewItemFormPage from './components/NewItemForm';
 import Footer from './components/Footer';
 import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
-import { DonorContextProvider } from './donorContext';
 
 axios.defaults.baseURL = 'http://localhost:3500';
 axios.defaults.withCredentials = true;
@@ -38,7 +37,6 @@ const App = () => {
     }, []);
 
     return (
-        <DonorContextProvider>
             <div className="min-h-screen flex flex-col">
                 {/* Navigation */}
                 <nav className="bg-blue-600 text-white p-4">
@@ -130,7 +128,6 @@ const App = () => {
 
                 <Footer />
             </div>
-        </DonorContextProvider>
     );
 };
 

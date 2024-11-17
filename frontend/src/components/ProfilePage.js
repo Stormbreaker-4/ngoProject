@@ -1,9 +1,22 @@
-import { useContext } from 'react';
-import { DonorContext } from '../donorContext';
+import { useEffect, useState } from 'react';
 
 const ProfilePage = () => {
-    const { donor } = useContext(DonorContext);
-    console.log(donor);
+    const [donor, setDonor] = useState();
+    
+    useEffect(() => {
+        // Fetch the donor data when the component mounts
+        const fetchDonorData = async () => {
+            try {
+                // Replace with your actual API endpoint
+                setDonor(JSON.parse(sessionStorage.getItem('donor')));                
+            } catch (error) {
+                console.error('Error fetching donor data:', error);
+            }
+        };
+
+        fetchDonorData();
+    }, []);
+
     return (
         <div className="container mx-auto p-6">
             <h2 className="text-3xl font-bold mb-4">My Profile</h2>

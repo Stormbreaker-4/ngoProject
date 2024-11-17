@@ -11,10 +11,10 @@ const createNewDonation = async (req, res) => {
             date_received,
             branch_id
         });
-        res.status(201).json(donation);
+        return res.status(201).json(donation);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        return res.status(500).json({ message: err.message });
     }
 }
 

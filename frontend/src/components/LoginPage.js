@@ -19,7 +19,8 @@ const LoginPage = () => {
                 setName(null);
                 setPwd(null);
                 toast.success('Login Successful!');
-                navigate('/profile')
+                sessionStorage.setItem('donor', JSON.stringify(response.data));
+                navigate('/profile');
             }
         } catch (err) {
             console.error(err);
