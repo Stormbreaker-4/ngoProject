@@ -1,4 +1,4 @@
-# Donation Platform
+# AidBridge
 
 This project is a web application that connects donors with people in need. The platform includes a **frontend** built with React.js and Tailwind CSS and a **backend** built with Node.js, Express, and Sequelize (MySQL).  
 
